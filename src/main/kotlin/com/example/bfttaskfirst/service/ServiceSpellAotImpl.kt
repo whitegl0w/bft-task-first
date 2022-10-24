@@ -1,14 +1,16 @@
-package com.example.bfttaskfirst
+package com.example.bfttaskfirst.service
 
 import com.github.demidko.aot.MorphologyTag
 import com.github.demidko.aot.WordformMeaning
 import com.github.demidko.aot.WordformMeaning.lookupForMeanings
+import org.springframework.context.annotation.Primary
 import org.springframework.stereotype.Service
 
 @Service
-class Service {
+@Primary
+class ServiceSpellAotImpl : ServiceSpell {
 
-    fun spell(word: String): List<String>? {
+    override fun spell(word: String): List<String>? {
 
         val casesOrder = arrayOf(
             MorphologyTag.Nominative,    // Именительный
